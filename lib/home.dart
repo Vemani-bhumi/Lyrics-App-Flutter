@@ -15,8 +15,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  
-
   Future <List<Track>> fetchData()async{
     
     final String apiEndPoint = "https://api.musixmatch.com/ws/1.1/chart.tracks.get?apikey=${dotenv.env['API_KEY']}";
@@ -45,6 +43,44 @@ class _HomePageState extends State<HomePage> {
     futureData = fetchData();
   }
 
+void _pushBookmarked(){
+
+  Navigator.of(context).push(
+    MaterialPageRoute<void>(
+      builder: (context){
+        final tiles = _saved.map(
+          (track){
+            return ListTile(
+              title: Text(
+                track.trackName,
+              ),
+            );
+          }
+          );
+
+          final divided = tiles.isNotEmpty
+              ? ListTile.divideTiles(
+                  context: context,
+                  tiles: tiles,
+                  color: Colors.blueGrey,
+                ).toList()
+              : <Widget>[];
+
+          return Scaffold(
+            appBar: AppBar(
+              title: const Text('Favourites'),
+            ),
+            body: ListView(children: divided),
+          );
+
+      }
+    )
+  );
+}
+
+
+
+
   @override
   Widget build(context) {
     return Scaffold(
@@ -56,7 +92,7 @@ class _HomePageState extends State<HomePage> {
             icon: const Icon(
               Icons.bookmark,
               ),
-            onPressed:(){},
+            onPressed: _pushBookmarked,
           )
         ] 
       ),
