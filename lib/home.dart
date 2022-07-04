@@ -15,7 +15,9 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  Future <List<Track>> fetchData()async{
+
+  // Web service 
+  Future <List<Track>> fetchData() async{
     
     final String apiEndPoint = "https://api.musixmatch.com/ws/1.1/chart.tracks.get?apikey=${dotenv.env['API_KEY']}";
     final Uri url = Uri.parse(apiEndPoint);
@@ -32,16 +34,16 @@ class _HomePageState extends State<HomePage> {
   }
   }
 
-
   late  Future <List<Track>> futureData;
-  final _saved = <Track>{}; 
-
-
+  
   @override
   void initState() {
     super.initState();
     futureData = fetchData();
   }
+
+ //bookmark nav 
+final _saved = <Track>{}; 
 
 void _pushBookmarked(){
 
@@ -54,6 +56,14 @@ void _pushBookmarked(){
               title: Text(
                 track.trackName,
               ),
+              onTap: (){
+                Navigator.push(
+                        context,              
+                        MaterialPageRoute(
+                        builder: (context) =>  TrackDetails(track : track),
+                      ),
+                  );
+              },
             );
           }
           );
@@ -86,7 +96,9 @@ void _pushBookmarked(){
     return Scaffold(
       appBar: AppBar(
         title: const Center(
-        child: Text('Lyrics App')),
+        child: Text('Lyrics App')
+        ),
+
         actions: <Widget>[
           IconButton(
             icon: const Icon(
@@ -96,6 +108,8 @@ void _pushBookmarked(){
           )
         ] 
       ),
+
+
       body: Center(
           child: FutureBuilder <List<Track>>(
             future: futureData,
@@ -141,7 +155,7 @@ void _pushBookmarked(){
                       }
                       );
                     }
-            ),
+                 ),
                   );
                   },
                   );  
