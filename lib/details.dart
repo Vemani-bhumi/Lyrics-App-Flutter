@@ -4,9 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
+import 'models/tracks.dart';
+
 class TrackDetails extends StatefulWidget {
-  final int? trackId;
-  const TrackDetails({Key? key,  int? this.trackId}) : super(key: key);
+  final Track track;
+  
+  const TrackDetails({Key? key,  required Track this.track}) : super(key: key);
 
   @override
   State<TrackDetails> createState() => _TrackDetailsState();
@@ -16,7 +19,7 @@ class _TrackDetailsState extends State<TrackDetails> {
 
   Future<String>fetchLyrics() async{
 
-    final apiEndPoint = "https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${widget.trackId}&apikey=${dotenv.env['API_KEY']}";
+    final apiEndPoint = "https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${widget.track.trackId}&apikey=${dotenv.env['API_KEY']}";
     final Uri url = Uri.parse(apiEndPoint);
     final response = await http.get(url);
     
@@ -43,7 +46,7 @@ class _TrackDetailsState extends State<TrackDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Lyrics"),
+        title: Text(widget.track.trackName),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

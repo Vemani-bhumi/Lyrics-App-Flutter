@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
 
 
   late  Future <List<Track>> futureData;
-
+  final _saved = <Track>{}; 
 
 
   @override
@@ -50,7 +50,15 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Center(
-          child: Text('Lyrics App')),
+        child: Text('Lyrics App')),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(
+              Icons.bookmark,
+              ),
+            onPressed:(){},
+          )
+        ] 
       ),
       body: Center(
           child: FutureBuilder <List<Track>>(
@@ -66,6 +74,9 @@ class _HomePageState extends State<HomePage> {
                   ),
                 itemCount: data.length,
                 itemBuilder: (BuildContext context, int index) {
+                  
+                  final bookmarked = _saved.contains(data[index]);
+
                   return ListTile(
                     title: Text(data[index].trackName),
                     subtitle: Text(data[index].artistName),
@@ -73,10 +84,28 @@ class _HomePageState extends State<HomePage> {
                       Navigator.push(
                         context,              
                         MaterialPageRoute(
-                        builder: (context) =>  TrackDetails(trackId : data[index].trackId),
+                        builder: (context) =>  TrackDetails(track : data[index]),
                       ),
                       );
                     },
+                    trailing:  IconButton(
+                      icon: Icon(
+                    bookmarked ? Icons.bookmark_add : Icons.bookmark_add_outlined,
+
+                    semanticLabel: bookmarked ? 'Remove from saved' : 'Save',
+                      ),
+                    onPressed:(){
+                      setState(() {
+                if (bookmarked){
+                _saved.remove(data[index]);
+                }
+                else{
+                  _saved.add(data[index]);
+                }
+                      }
+                      );
+                    }
+            ),
                   );
                   },
                   );  
