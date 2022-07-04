@@ -67,8 +67,8 @@ class _HomePageState extends State<HomePage> {
                 itemCount: data.length,
                 itemBuilder: (BuildContext context, int index) {
                   return ListTile(
-                    title: Text(data[index].trackName ?? " "),
-                    subtitle: Text(data[index].artistName ?? " "),
+                    title: Text(data[index].trackName),
+                    subtitle: Text(data[index].artistName),
                     onTap: (){
                       Navigator.push(
                         context,              

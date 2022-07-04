@@ -1,9 +1,9 @@
 class Track{
-  final int? trackId;
-  final String? trackName;
-  final String? artistName;
+  final int trackId;
+  final String trackName;
+  final String artistName;
 
-  Track({this.trackId,this.trackName,this.artistName});
+  Track({required this.trackId,required this.trackName,required this.artistName});
 
   factory Track.fromJson(Map<String, dynamic> json){
     return Track(
