@@ -42,51 +42,52 @@ class _HomePageState extends State<HomePage> {
     futureData = fetchData();
   }
 
- //bookmark nav 
-final _saved = <Track>{}; 
 
-void _pushBookmarked(){
+  final _saved = <Track>{}; 
 
-  Navigator.of(context).push(
-    MaterialPageRoute<void>(
-      builder: (context){
-        final tiles = _saved.map(
-          (track){
-            return ListTile(
-              title: Text(
-                track.trackName,
-              ),
-              onTap: (){
-                Navigator.push(
-                        context,              
-                        MaterialPageRoute(
-                        builder: (context) =>  TrackDetails(track : track),
-                      ),
-                  );
-              },
+  //bokkmark nav
+  void _pushBookmarked(){
+
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (context){
+          final tiles = _saved.map(
+            (track){
+              return ListTile(
+                title: Text(
+                  track.trackName,
+                ),
+                onTap: (){
+                  Navigator.push(
+                          context,              
+                          MaterialPageRoute(
+                          builder: (context) =>  TrackDetails(track : track),
+                        ),
+                    );
+                },
+              );
+            }
             );
-          }
-          );
 
-          final divided = tiles.isNotEmpty
-              ? ListTile.divideTiles(
-                  context: context,
-                  tiles: tiles,
-                  color: Colors.blueGrey,
-                ).toList()
-              : <Widget>[];
+            final divided = tiles.isNotEmpty
+                ? ListTile.divideTiles(
+                    context: context,
+                    tiles: tiles,
+                    color: Colors.blueGrey,
+                  ).toList()
+                : <Widget>[];
 
-          return Scaffold(
-            appBar: AppBar(
-              title: const Text('Favourites'),
-            ),
-            body: ListView(children: divided),
-          );
+            return Scaffold(
+              appBar: AppBar(
+                title: const Text('Favourites'),
+              ),
+              body: ListView(children: divided),
+            );
 
-      }
-    )
-  );
-}
+        }
+      )
+    );
+  }
 
 
 
@@ -99,8 +100,8 @@ void _pushBookmarked(){
         child: Text('Lyrics App')
         ),
 
-        actions: <Widget>[
-          IconButton(
+      actions: <Widget>[
+        IconButton(
             icon: const Icon(
               Icons.bookmark,
               ),
@@ -113,9 +114,9 @@ void _pushBookmarked(){
       body: Center(
           child: FutureBuilder <List<Track>>(
             future: futureData,
+
             builder: (context, snapshot) {
               if (snapshot.hasData) {
-                
                 List<Track> data = snapshot.data ?? <Track>[];
                 return 
                 ListView.separated(
@@ -138,24 +139,24 @@ void _pushBookmarked(){
                       ),
                       );
                     },
-                    trailing:  IconButton(
+
+                    trailing: IconButton(
                       icon: Icon(
                     bookmarked ? Icons.bookmark_add : Icons.bookmark_add_outlined,
-
                     semanticLabel: bookmarked ? 'Remove from saved' : 'Save',
                       ),
                     onPressed:(){
                       setState(() {
-                if (bookmarked){
-                _saved.remove(data[index]);
-                }
-                else{
-                  _saved.add(data[index]);
-                }
+                            if (bookmarked){
+                            _saved.remove(data[index]);
+                            }
+                            else{
+                              _saved.add(data[index]);
+                            }
                       }
                       );
                     }
-                 ),
+                   ),
                   );
                   },
                   );  

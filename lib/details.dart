@@ -8,7 +8,7 @@ import 'models/tracks.dart';
 
 class TrackDetails extends StatefulWidget {
   final Track track;
-  
+
   const TrackDetails({Key? key,  required Track this.track}) : super(key: key);
 
   @override
@@ -16,7 +16,7 @@ class TrackDetails extends StatefulWidget {
 }
 
 class _TrackDetailsState extends State<TrackDetails> {
-
+  // Web service 
   Future<String>fetchLyrics() async{
 
     final apiEndPoint = "https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${widget.track.trackId}&apikey=${dotenv.env['API_KEY']}";
@@ -61,7 +61,7 @@ class _TrackDetailsState extends State<TrackDetails> {
                   return Text("${snapshot.error}");
                 }
                 // By default show a loading spinner.
-                return const CircularProgressIndicator();
+              return const CircularProgressIndicator();
         }),
       )
       );
