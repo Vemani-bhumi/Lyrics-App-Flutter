@@ -19,24 +19,29 @@ Working Screenshots :
 Screen 1
 
 
-![Screenshot_1656956841_resize_50](https://user-images.githubusercontent.com/58652333/177276132-9295b2f1-b95c-434f-b68b-4536ca8aa5f7.png)
+![Screenshot_1656956841](https://user-images.githubusercontent.com/58652333/177277329-500313e5-1ac5-48d1-960b-68acda6d1af3.png)
+
 
   
 Screen 2 from Screen 1
 
-![Screenshot_1656956903](https://user-images.githubusercontent.com/58652333/177273628-bffbeca9-c487-433f-9305-f8b78b7f3c8b.png)
+![Screenshot_1656956903](https://user-images.githubusercontent.com/58652333/177277372-7076caed-9b68-43ae-a43c-810b7f586fa7.png)
+
 
 Bookmarked tracks on Screen 1
 
-![Screenshot_1656956852](https://user-images.githubusercontent.com/58652333/177273726-46166381-9807-4eac-b4de-3e6b1c4ba519.png)
+![Screenshot_1656956852](https://user-images.githubusercontent.com/58652333/177277425-78037384-c314-4c14-965b-e3d4143ab0a0.png)
+
 
 Screen 3
 
-![Screenshot_1656956858](https://user-images.githubusercontent.com/58652333/177273766-27646880-dc51-462d-8878-b602c35bf237.png)
+![Screenshot_1656956858](https://user-images.githubusercontent.com/58652333/177277455-1b240a49-b139-494c-a535-8836ecdef191.png)
+
 
 Lyrics from Screen 3
 
-![Screenshot_1656956875](https://user-images.githubusercontent.com/58652333/177273899-58a007e2-123f-4c3a-b1a7-b7c6aa33013f.png)
+![Screenshot_1656956875](https://user-images.githubusercontent.com/58652333/177277498-77545f96-caaa-437a-bfa1-357db1f9e348.png)
+
 
 
 
