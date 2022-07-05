@@ -18,7 +18,7 @@ Working Screenshots :
 
 Screen 1
 
-![Screenshot_1656956841](https://user-images.githubusercontent.com/58652333/177273497-7a4e96c2-b74f-46d4-8a14-030deeaae62f.png)
+![Screenshot_1656956841_resize](https://user-images.githubusercontent.com/58652333/177275617-5ee5d6d7-25f7-482c-afb3-b0aba2db6a38.png)
 
 Screen 2 from Screen 1
 
