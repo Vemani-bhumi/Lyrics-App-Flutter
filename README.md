@@ -1,16 +1,40 @@
 # lyrics_app
 
-A new Flutter project.
+This is a lyrics app made using the Flutter framework. The app has the following features:
 
-## Getting Started
+1. List View of track names and artist names using an external API.(Screen 1)
 
-This project is a starting point for a Flutter application.
+2. On clicking the track new screen appears displaying the lyrics fetched using the same API.(Screen 2)
 
-A few resources to get you started if this is your first Flutter project:
+3. Each track can be bookmarked.(Screen 1)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+4. The bookmarked tracks can be viewed on clicking the bookmark button on top right in Screen 1.(Screen 3)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+5. Lyrics can be accessed on click from the bookmarks page redirecting from Screen 3 to Screen 2.
+
+API used : https://developer.musixmatch.com/documentation/api-methods
+
+Working Screenshots : 
+
+Screen 1
+
+![Screenshot_1656956841](https://user-images.githubusercontent.com/58652333/177273497-7a4e96c2-b74f-46d4-8a14-030deeaae62f.png)
+
+Screen 2 from Screen 1
+
+![Screenshot_1656956903](https://user-images.githubusercontent.com/58652333/177273628-bffbeca9-c487-433f-9305-f8b78b7f3c8b.png)
+
+Bookmarked tracks on Screen 1
+
+![Screenshot_1656956852](https://user-images.githubusercontent.com/58652333/177273726-46166381-9807-4eac-b4de-3e6b1c4ba519.png)
+
+Screen 3
+
+![Screenshot_1656956858](https://user-images.githubusercontent.com/58652333/177273766-27646880-dc51-462d-8878-b602c35bf237.png)
+
+Lyrics from Screen 3
+
+![Screenshot_1656956875](https://user-images.githubusercontent.com/58652333/177273899-58a007e2-123f-4c3a-b1a7-b7c6aa33013f.png)
+
+
+
