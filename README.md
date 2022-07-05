@@ -18,8 +18,10 @@ Working Screenshots :
 
 Screen 1
 
-![Screenshot_1656956841_resize](https://user-images.githubusercontent.com/58652333/177275617-5ee5d6d7-25f7-482c-afb3-b0aba2db6a38.png)
-
+<p align == "center">
+![Screenshot_1656956841_resize_50](https://user-images.githubusercontent.com/58652333/177276132-9295b2f1-b95c-434f-b68b-4536ca8aa5f7.png)
+<p>
+  
 Screen 2 from Screen 1
 
 ![Screenshot_1656956903](https://user-images.githubusercontent.com/58652333/177273628-bffbeca9-c487-433f-9305-f8b78b7f3c8b.png)
