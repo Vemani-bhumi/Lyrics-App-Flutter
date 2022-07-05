@@ -18,9 +18,9 @@ Working Screenshots :
 
 Screen 1
 
-<p align == "center">
+
 ![Screenshot_1656956841_resize_50](https://user-images.githubusercontent.com/58652333/177276132-9295b2f1-b95c-434f-b68b-4536ca8aa5f7.png)
-<p>
+
   
 Screen 2 from Screen 1
 
